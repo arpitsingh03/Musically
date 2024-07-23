@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles/reset.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles/style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles/dropdown.css')}}"
+    />
+  </head>
+
+  <body>
+    <main>
+      <div class="hero">
+        <img
+          class="glow"
+          src="{{url_for('static', filename='images/landing-glow.svg')}}"
+        />
+        <div class="glow"></div>
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="title">Musical.<span>ly</span></h1>
+            <p class="slogan">music in your veins</p>
+            <a class="btn" href="#cta">Search Now</a>
+            <p class="desc">
+              Musical.ly provides a huge data set of popular music in different
+              genres, start exploring now
+            </p>
+          </div>
+          <div class="hero-img">
+            <img
+              src="{{url_for('static', filename='images/girl-enjoying-music.svg')}}"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="cta" id="cta">
+        <img
+          src="{{url_for('static', filename='images/music-glow-top.svg')}}"
+          alt=""
+          class="glow-top"
+        />
+        <div class="container">
+          <h4 class="title"><span>Feel</span> the <span>Music</span></h4>
+          <div data-dropdown>
+            <form onsubmit="handleSearch(event)">
+              <div class="dropdown">
+                <input type="hidden" name="query" />
+                <div class="dropdown-placeholder" contenteditable="true">
+                  Live Undead
+                </div>
+                <div class="dropdown-menu"></div>
+              </div>
+              <button>Search</button>
+            </form>
+          </div>
+          <div class="card-grid" data-card-grid></div>
+        </div>
+        <img
+          src="{{url_for('static', filename='images/music-glow-bottom.svg')}}"
+          alt=""
+          class="glow-bottom"
+        />
+      </div>
+    </main>
+    <script src="{{url_for('static', filename='scripts/displayMusic.js')}}"></script>
+    <script src="{{url_for('static', filename='scripts/loadHints.js')}}"></script>
+    <script src="{{url_for('static', filename='scripts/displayHints.js')}}"></script>
+    <script src="{{url_for('static', filename='scripts/dropdown.js')}}"></script>
+  </body>
+</html>
